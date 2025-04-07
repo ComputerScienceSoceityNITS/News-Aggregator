@@ -29,6 +29,8 @@ A dynamic web application that fetches and displays news articles from various s
 
 - **Set up Environment Varibles**
 
+   Create a .env file in the root directory :
+ 
   `API_KEY=your_api_key`
 
 - **Run the Application**
