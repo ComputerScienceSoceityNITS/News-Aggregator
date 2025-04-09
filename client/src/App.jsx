@@ -5,6 +5,8 @@ import AllNews from "./components/AllNews";
 // import Footer from "./components/Footer";
 import TopHeadlines from "./components/TopHeadlines";
 import CountryNews from "./components/CountryNews";
+import Signup from "./components/Signup"
+import Login from "./components/Login"
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -19,6 +21,8 @@ function App() {
           <Route path="/" element={<AllNews />} />
           <Route path="/top-headlines/:category" element={<TopHeadlines />} />
           <Route path="/country/:iso" element={<CountryNews />} />
+          <Route path="/signup" element = {<Signup/>}/>
+          <Route path="/login" element = {<Login/>}/>
         </Routes>
         {/* <Cards />   */}
         {/* <Footer />   */}
