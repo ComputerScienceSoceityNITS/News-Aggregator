@@ -12,7 +12,10 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-
+.signup-container {
+    margin-top: 80px; /* or whatever height your nav is */
+  }
+  
 .light-theme {
     --background: url("https://tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg");
     --primary: #F8FAFC;
@@ -289,6 +292,7 @@ footer {
     background-size: 100% 10px, 10px 100%;
     background-repeat: no-repeat;
 }
+
 
 .loader::after {
     transform: rotate(45deg);

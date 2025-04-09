@@ -1,14 +1,20 @@
 require("dotenv").config();
-
+const mongoose = require("mongoose")
 const express = require("express");
 const { urlencoded } = require("express");
 const axios = require("axios");
 const cors = require("cors"); 
+const authController= require("./controllers/authControllers.js");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
-app.use(cors());
+app.use(cookieParser());
+app.use(express.json())
+
 app.use(urlencoded({ extended: true }));
+
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 const API_KEY = process.env.API_KEY;
 
@@ -77,10 +83,17 @@ app.get("/country/:iso", (req, res) => {
     fetchNews(url, res);
 })
 
+app.post("/signup", authController.signup)
+app.post("/login",authController.login)
 //port
 
 const PORT = process.env.PORT || 3000;
 
+mongoose.connect(process.env.DATABASE,{
+}).then(con=>{
+    
+    console.log('DB connection successful');
+});
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
